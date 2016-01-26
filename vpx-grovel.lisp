@@ -19,6 +19,11 @@
        ((:vpx-codec-list-end "VPX_CODEC_LIST_END")))
 
 (cstruct vpx_codec_ctx_t "vpx_codec_ctx_t")
+;;(cstruct vpx_codec_iface "vpx_codec_iface")
+(cstruct vpx_codec_dec_cfg_t "vpx_codec_dec_cfg_t")
+
+(ctype pvpx_codec_iface_t "vpx_codec_iface_t*")
+(ctype vpx_codec_flags_t "vpx_codec_flags_t")
 
 (constant (vpx-decoder-abi-version "VPX_DECODER_ABI_VERSION"))
 
