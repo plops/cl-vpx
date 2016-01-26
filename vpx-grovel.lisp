@@ -2,7 +2,7 @@
 (cc-flags "-lvpx")
 
 
-(include "vpx/vpx_codec.h")
+(include "vpx/vpx_decoder.h")
 (include "vpx/vp8dx.h")
 
 
@@ -17,3 +17,5 @@
        ((:vpx-codec-corrupt-frame "VPX_CODEC_CORRUPT_FRAME"))
        ((:vpx-codec-invalid-param "VPX_CODEC_INVALID_PARAM"))
        ((:vpx-codec-list-end "VPX_CODEC_LIST_END")))
+
+(constant (vpx-decoder-abi-version "VPX_DECODER_ABI_VERSION"))
