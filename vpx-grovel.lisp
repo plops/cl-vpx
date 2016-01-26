@@ -18,4 +18,9 @@
        ((:vpx-codec-invalid-param "VPX_CODEC_INVALID_PARAM"))
        ((:vpx-codec-list-end "VPX_CODEC_LIST_END")))
 
+(cstruct vpx_codec_ctx_t "vpx_codec_ctx_t")
+
 (constant (vpx-decoder-abi-version "VPX_DECODER_ABI_VERSION"))
+
+
+
