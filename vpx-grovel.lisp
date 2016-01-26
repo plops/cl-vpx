@@ -7,5 +7,5 @@
 
 
 (cenum vpx_codec_err_t
-       ((:VPX_CODEC_OK))
-       ((:VPX_CODEC_ERROR)))
+       ((:vpx-codec-ok "VPX_CODEC_OK"))
+       ((:vpx-codec-error "VPX_CODEC_ERROR")))
