@@ -7,8 +7,8 @@
   :author "Martin Kielhorn"
   :license "GPLv3"
   :depends-on (cffi)
-  :serial t
+;  :serial t
   :components ((:file "package")
-	       (cffi-grovel:grovel-file "vpx-grovel")
-               (:file "cl-vpx")))
+	       (cffi-grovel:grovel-file "vpx-grovel" :depends-on ("package"))
+               (:file "cl-vpx" :depends-on ("package" "vpx-grovel"))))
 
