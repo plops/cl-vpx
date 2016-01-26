@@ -27,7 +27,7 @@
 (ctype pvpx_codec_iface_t "vpx_codec_iface_t*")
 (ctype vpx_codec_flags_t "vpx_codec_flags_t")
 
-(constant (vpx-decoder-abi-version "VPX_DECODER_ABI_VERSION"))
+(constant (+vpx-decoder-abi-version+ "VPX_DECODER_ABI_VERSION"))
 
 
 
