@@ -1,12 +1,14 @@
 ;; sbcl --eval '(ql:quickload "cl-vpx")'
 (in-package :cl-vpx-internal)
 
-(cc-flags "-lvpx")
+(cc-flags "-lvpx" "-I/home/martin/stage/cl-vpx")
 
 
 (include "vpx/vpx_decoder.h")
 (include "vpx/vp8dx.h")
-
+(include "tools_common.h")
+(include "video_common.h")
+(include "video_reader.h")
 
 (cenum vpx_codec_err_t
        ((:vpx-codec-ok "VPX_CODEC_OK"))
@@ -29,5 +31,14 @@
 
 (constant (+vpx-decoder-abi-version+ "VPX_DECODER_ABI_VERSION"))
 
+(cstruct VpxVideoReader "VpxVideoReader")
+
+(cstruct VpxVideoInfo "VpxVideoInfo"
+	 (:codec-fourcc "codec_fourcc")
+	 (:frame-width "frame_width")
+	 (:frame-height "frame_height"))
+
+(cstruct VpxInterface "VpxInterface"
+	 (:codec-interface "codec_interface"))
 
 
