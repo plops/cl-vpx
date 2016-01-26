@@ -19,10 +19,36 @@
 ;; (cffi:defctype vpx_codec_flags_t :int64)
 ;; (defconstant +vpx-decoder-abi-version+ 9)
 
-(cffi:defcfun (%vpx-codec-dec-init-ver "vpx_codec_dec_init_ver")
+(defcfun (%vpx-codec-dec-init-ver "vpx_codec_dec_init_ver")
     vpx_codec_err_t
   (ctx (:pointer vpx_codec_ctx_t))
   (iface pvpx_codec_iface_t)
   (cfg (:pointer vpx_codec_dec_cfg_t)) ;; const
   (flags vpx_codec_flags_t)
   (ver :int))
+
+(cstruct VpxVideoReader)
+
+(cstruct VpxVideoInfo
+	 ((:codec-fourcc "codec_fourcc"))
+	 ((:frame-width "frame_width"))
+	 ((:frame-height "frame_height")))
+
+(cstruct VpxInterface
+	 ((:codec-interface "codec_interface")))
+
+(defcfun (%vpx-video-reader-open "vpx_video_reader_open") (:pointer VpxVideoReader) )
+(defcfun (%vpx-video-reader-getinfo "vpx_video_reader_get_info") (:pointer VpxVideoInfo))
+(defcfun (%get-vpx-decoder-by-fourcc "get_vpx_decoder_by_fourcc") (:pointer VpxInterface))
+(defcfun (%vpx_codec_iface_name  "vpx-codec-iface-name"))
+
+;; vpx_video_reader_read_frame
+
+vpx_codec_iter_t
+vpx_image_
+vpx_video_reader_get_frame
+vpx_codec_decode
+vpx_codec_get_frame
+vpx_img_write
+vpx_codec_destroy
+vpx_video_reader_close
