@@ -1,4 +1,6 @@
 ;; sbcl --eval '(ql:quickload "cl-vpx")'
+(in-package :cl-vpx-internal)
+
 (cc-flags "-lvpx")
 
 
