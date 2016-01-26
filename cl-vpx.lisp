@@ -19,13 +19,10 @@
 ;; (cffi:defctype vpx_codec_flags_t :int64)
 ;; (defconstant +vpx-decoder-abi-version+ 9)
 
-
-(format t "~a~%" cl-vpx-internal::+vpx-decoder-abi-version+)
-
-#+nil
-(cffi:defcfun (%vpx-codec-dec-init-ver "vpx_codec_dec_init_ver") vpx_codec_err_t
+(cffi:defcfun (%vpx-codec-dec-init-ver "vpx_codec_dec_init_ver")
+    vpx_codec_err_t
   (ctx (:pointer vpx_codec_ctx_t))
   (iface pvpx_codec_iface_t)
-  (cfg (const (:pointer vpx_codec_dec_cfg_t)))
+  (cfg (:pointer vpx_codec_dec_cfg_t)) ;; const
   (flags vpx_codec_flags_t)
-  (ver int))
+  (ver :int))
